@@ -163,7 +163,7 @@ namespace sc {
         double y4 = p2o.y;
 
         double d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-        cv::Point output;
+        cv::Point2d output;
         output.x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / d;
         output.y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / d;
 
@@ -175,8 +175,8 @@ namespace sc {
         cv::drawMarker( both, output,	cv::Scalar(0, 0, 255), cv::MARKER_TILTED_CROSS, 9);
         // cv::imshow("Intersection Lines", both);
 
-        string ws_path = getenv("ROS_WORKSPACE");
-        cv::imwrite(ws_path + "/debug_img/" + "corner_img.jpg", both);
+        // string ws_path = getenv("ROS_WORKSPACE");
+        // cv::imwrite(ws_path + "/debug_img/" + "corner_img.jpg", both);
 
         // if(cv::waitKey()) cv::destroyAllWindows();
 
